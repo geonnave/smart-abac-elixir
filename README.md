@@ -20,7 +20,7 @@ Add to your `mix.exs` file:
 defp deps do
   [
     # ...
-    {:smart_abac, "~> 0.3.0"}
+    {:smart_abac, "~> 1.0.0"}
   ]
 end
 ```
