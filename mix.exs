@@ -34,13 +34,12 @@ defmodule SmartABAC.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:cbor, "~> 1.0.0"},
-      {:ecto, "~> 3.3"},
-      {:ex_machina, "~> 2.4", only: :test},
-      {:tzdata, "~> 1.0.1"},
-      {:jason, "~> 1.2"},
-      {:decorator, "~> 1.2"},
-      {:poison, "~> 3.1"}
+      {:cbor, "~> 1.0"},
+      {:ecto, "~> 3.10"},
+      {:ex_machina, "~> 2.7", only: :test},
+      {:tzdata, "~> 1.1"},
+      {:jason, "~> 1.4"},
+      {:decorator, "~> 1.4"}
     ]
   end
 end
