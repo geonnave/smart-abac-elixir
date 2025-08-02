@@ -54,7 +54,7 @@ defmodule SmartABAC.HierarchyStore do
   def open(filename) do
     Path.join(:code.priv_dir(:smart_abac), filename)
     |> File.open!()
-    |> IO.read(:all)
+    |> IO.read(:eof)
   end
 
   def parse(graph) do

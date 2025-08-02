@@ -230,7 +230,7 @@ defmodule PerformanceTest do
     |> case do
       {:ok, file} ->
         Logger.debug("Parsing json")
-        Serialization.from_json(IO.read(file, :all))
+        Serialization.from_json(IO.read(file, :eof))
 
       error ->
         error
