@@ -1,5 +1,8 @@
 # SmartABAC
 
+[![Hex.pm](https://img.shields.io/hexpm/v/smart_abac.svg)](https://hex.pm/packages/smart_abac)
+[![Documentation](https://img.shields.io/badge/docs-hexpm-blue.svg)](https://hexdocs.pm/smart_abac/)
+
 Elixir implementation of the SmartABAC access control model. [See our paper here](https://ieeexplore.ieee.org/abstract/document/9528856). A C version is [also available](https://github.com/swarm-citi-usp/smart-abac-c).
 
 SmartABAC is a new attribute-based access control model that can be embedded in IoT devices with minimal overhead. It provides the following features:
@@ -13,13 +16,24 @@ SmartABAC is a new attribute-based access control model that can be embedded in 
 
 Add to your `mix.exs` file:
 
+```elixir
+defp deps do
+  [
+    # ...
+    {:smart_abac, "~> 0.3.0"}
+  ]
+end
 ```
-  defp deps do
-    [
-      # ...
-      {:smart_abac, "git@github.com:swarm-citi-usp/smart-abac-elixir.git"}
-    ]
-  end
+
+Or to install the latest development version from GitHub:
+
+```elixir
+defp deps do
+  [
+    # ...
+    {:smart_abac, git: "https://github.com/geonnave/smart-abac-elixir.git"}
+  ]
+end
 ```
 
 # Example
@@ -115,3 +129,4 @@ If you use this code in your research, please cite as follows:
   year={2021},
   publisher={IEEE}
 }
+```
