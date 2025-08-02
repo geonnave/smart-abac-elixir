@@ -67,7 +67,7 @@ defmodule PerformanceTest do
     assert SmartABAC.authorize(request)
 
     Process.sleep(1000)
-    Process.sleep(100 + :random.uniform(100))
+    Process.sleep(100 + :rand.uniform(100))
     start_ms = start()
 
     for _i <- 1..3000 do
@@ -99,7 +99,7 @@ defmodule PerformanceTest do
 
     sum =
       Enum.reduce(0..t, 0, fn _j, acc ->
-        Process.sleep(25 + :random.uniform(25))
+        Process.sleep(25 + :rand.uniform(25))
         start_ms = start()
 
         for _i <- 1..3000 do
@@ -159,7 +159,7 @@ defmodule PerformanceTest do
     {:ok, request} = params_for(:request_expanded) |> SmartABAC.build_request()
 
     Process.sleep(3000)
-    Process.sleep(100 + :random.uniform(100))
+    Process.sleep(100 + :rand.uniform(100))
     start_ms = start()
     assert PDP.authorize(request, policies)
     spent_ms = finish(start_ms)
