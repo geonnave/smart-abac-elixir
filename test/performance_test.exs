@@ -239,6 +239,10 @@ defmodule PerformanceTest do
 
   def save_policies(policies, m, n) do
     filename = Path.join(:code.priv_dir(:smart_abac), "/benchmark/policies_#{m}-#{n}.json")
+
+    # Ensure the directory exists
+    Path.dirname(filename) |> File.mkdir_p()
+
     {:ok, json_policies} = Serialization.to_json(policies, pretty: true)
     File.write(filename, json_policies)
   end
@@ -251,7 +255,7 @@ defmodule PerformanceTest do
 
   def setup_results_csv(steps_m, steps_n) do
     {pathname, filename} = results_filename(steps_m, steps_n)
-    File.mkdir(pathname)
+    File.mkdir_p(pathname)
     Logger.debug("Results go to file #{pathname}/#{filename}")
     File.write("#{pathname}/#{filename}", "policies, attributes, spent time\n")
   end
